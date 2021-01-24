@@ -47,14 +47,7 @@ def grenzgerade2(x):
 #polyfit des mittleren stücks
 poly = np.polyfit(t2, Tmisch1, 8)
 
-plt.plot(t2, Tmisch1, 'k.')
-plt.plot(t1, Tkalt, 'k.')
-plt.plot(t3, Tmisch2, 'k.')
-plt.plot(t2, fct.printpolynom(t2, poly), 'g-')
-plt.show()
-plt.plot(t3, Tmisch2, 'k.')
-plt.plot(t3, grenzgerade1(t3), 'r--', linewidth = 0.8)
-plt.plot(t3, grenzgerade2(t3), 'r--', linewidth = 0.8, label = 'Grenzgeraden')
+
 #plt.show()
 
 def mitte(x):
@@ -132,3 +125,7 @@ plt.grid()
 plt.legend()
 plt.show()
 print(ausgleichkalt(tstern), ausgleichwarm(tstern), ausgleichmisch(tstern))
+
+#Aufgabe 2
+t2 = np.arange(1, 41, 1)
+print(t2)
