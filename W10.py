@@ -128,4 +128,12 @@ print(ausgleichkalt(tstern), ausgleichwarm(tstern), ausgleichmisch(tstern))
 
 #Aufgabe 2
 t2 = np.arange(1, 41, 1)
-print(t2)
+Toku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=1)
+Tuku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=2)
+Toal = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=1)
+Tual = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=2)
+
+grenzku = fct.steigunggrenz(t2, Tuku)
+
+plt.plot(t2, Tuku, 'k.')
+plt.show()
