@@ -85,14 +85,12 @@ for x in range(1, 1000, 1):
         y=x
     if (dif1 < mini1):
         mini1 = dif1
-        print(dif1)
         y1 = x
-        print(x)
+
     if (dif2 < mini2):
         mini2 = dif2
-        print(dif2)
         y2 = x
-        print(x)
+
 tstern = t1[-1] + y*(t2[-1]-t1[-1])/1000
 tstern2 = t1[-1] + y1*(t2[-1]-t1[-1])/1000
 tstern3 = t1[-1] + y2*(t2[-1]-t1[-1])/1000
@@ -133,7 +131,12 @@ Tuku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=2)
 Toal = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=1)
 Tual = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=2)
 
-grenzku = fct.steigunggrenz(t2, Tuku)
+grenzku = fct.steigunggrenz(t2[2:], Tuku[2:])
+patuku = np.polyfit(t2[2:], Tuku[2:])
 
 plt.plot(t2, Tuku, 'k.')
+plt.plot(t2[2:],fct.printpolynom(t2[2:], patuku) ,'r-')
+plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[0]),'r--' )
+plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[1]),'r--' )
+plt.title("untere Temperatur von Kupfer")
 plt.show()
