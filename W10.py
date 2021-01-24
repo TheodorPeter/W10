@@ -94,9 +94,6 @@ for x in range(1, 1000, 1):
 tstern = t1[-1] + y*(t2[-1]-t1[-1])/1000
 tstern2 = t1[-1] + y1*(t2[-1]-t1[-1])/1000
 tstern3 = t1[-1] + y2*(t2[-1]-t1[-1])/1000
-print( t1[-1] + y*(t2[-1]-t1[-1])/1000)
-print( t1[-1] + y1*(t2[-1]-t1[-1])/1000)
-print( t1[-1] + y2*(t2[-1]-t1[-1])/1000)
 
 
 #Beginn des Plots
@@ -119,9 +116,20 @@ plt.title('Zwickelabgleich Aufgabe 3')
 plt.grid()
 plt.legend()
 plt.show()
-print(ausgleichkalt(tstern), ausgleichwarm(tstern), ausgleichmisch(tstern))
 
-
+mh = 0.4765-0.2775
+mk = 0.4586-0.2421
+Tkalt = ausgleichkalt(tstern)
+Twarm = ausgleichwarm(tstern)
+Tmisch = ausgleichmisch(tstern)
+print("tstern:", tstern)
+print("Tkalt:", ausgleichkalt(tstern))
+print("Twarm:", ausgleichwarm(tstern))
+print("Tmisch:", ausgleichmisch(tstern))
+w = mh*(Twarm-Tmisch)/(Tmisch-Tkalt)-mk
+print("Wasserwert ohne Gruppennummer:", w)
+wgruppe = w + 0.0013
+print("Wasswerwert mit Gruppennummer", wgruppe)
 #Aufgabe 2
 t2 = np.arange(1, 41, 1)
 Toku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=1)
@@ -138,6 +146,7 @@ plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[0]),'r--', label = 'G
 plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[1]),'r--' )
 plt.title("untere Temperatur von Kupfer")
 plt.legend()
+plt.grid()
 plt.xlabel("t in min")
 plt.ylabel("T in °C")
 plt.show()
@@ -154,8 +163,12 @@ plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tual[2:], grenzalu[1]),'r--' )
 plt.xlabel("t in min")
 plt.ylabel("T in °C")
 plt.legend()
+plt.grid()
 plt.title("untere Temperatur von Aluminium")
 plt.show()
+
+
+#Aufgabe 3
 
 plt.plot(t2, Tual,'.r-',label = 'T Unten')
 plt.plot(t2, Toal,'.g-',label = 'T Oben')
@@ -176,3 +189,6 @@ plt.xlabel("t in min")
 plt.ylabel("T in °C")
 plt.legend()
 plt.show()
+
+print("Temperaturdifferenz Alu Stationär:", fct.mittelwert((Toal-Tual)[26:]))
+print("Temperaturdifferenz Kupfer Stationär:", fct.mittelwert((Toku-Tuku)[26:]))
