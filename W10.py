@@ -132,7 +132,7 @@ Toal = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=1)
 Tual = np.loadtxt(directory, skiprows=63, max_rows=40, usecols=2)
 
 grenzku = fct.steigunggrenz(t2[2:], Tuku[2:])
-patuku = np.polyfit(t2[2:], Tuku[2:])
+patuku = np.polyfit(t2[2:], Tuku[2:], 1)
 
 plt.plot(t2, Tuku, 'k.')
 plt.plot(t2[2:],fct.printpolynom(t2[2:], patuku) ,'r-')
@@ -140,3 +140,16 @@ plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[0]),'r--' )
 plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[1]),'r--' )
 plt.title("untere Temperatur von Kupfer")
 plt.show()
+
+
+
+grenzalu = fct.steigunggrenz(t2[2:], Tual[2:])
+patalu = np.polyfit(t2[2:], Tual[2:], 1)
+
+plt.plot(t2, Tual, 'k.')
+plt.plot(t2[2:],fct.printpolynom(t2[2:], patalu) ,'r-')
+plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tual[2:], grenzalu[0]),'r--' )
+plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tual[2:], grenzalu[1]),'r--' )
+plt.title("untere Temperatur von Aluminium")
+plt.show()
+
