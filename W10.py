@@ -163,4 +163,4 @@ plt.plot(t2,Tuku,'r-',label = 'T Unten')
 plt.plot(t2,Toku,'g-',label = 'T Oben')
 plt.plot(t2,(Toku-Tuku),'b-',label = 'Delta T')
 plt.legend()
-plt.show()
+plt.show() #test
