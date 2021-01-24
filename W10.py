@@ -121,6 +121,7 @@ plt.legend()
 plt.show()
 print(ausgleichkalt(tstern), ausgleichwarm(tstern), ausgleichmisch(tstern))
 
+
 #Aufgabe 2
 t2 = np.arange(1, 41, 1)
 Toku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=1)
@@ -136,6 +137,7 @@ plt.plot(t2[2:],fct.printpolynom(t2[2:], patuku) ,'r-', label = 'Ausgleichsgerad
 plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[0]),'r--', label = 'Grenzgeraden' )
 plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tuku[2:], grenzku[1]),'r--' )
 plt.title("untere Temperatur von Kupfer")
+plt.legend()
 plt.xlabel("t in min")
 plt.ylabel("T in °C")
 plt.show()
@@ -151,6 +153,7 @@ plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tual[2:], grenzalu[0]),'r--', label = '
 plt.plot(t2[2:], fct.grenzgerade(t2[2:], Tual[2:], grenzalu[1]),'r--' )
 plt.xlabel("t in min")
 plt.ylabel("T in °C")
+plt.legend()
 plt.title("untere Temperatur von Aluminium")
 plt.show()
 
