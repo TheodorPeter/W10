@@ -130,7 +130,15 @@ w = mh*(Twarm-Tmisch)/(Tmisch-Tkalt)-mk
 print("Wasserwert ohne Gruppennummer:", w)
 wgruppe = w + 0.0013
 print("Wasswerwert mit Gruppennummer", wgruppe)
+
+
+
 #Aufgabe 2
+cw = 4184
+mwalu = 0.6857 - 0.2421
+mwku = 0.670 - 0.2403
+
+
 t2 = np.arange(1, 41, 1)
 Toku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=1)
 Tuku = np.loadtxt(directory, skiprows=6, max_rows=40, usecols=2)
@@ -167,8 +175,12 @@ plt.grid()
 plt.title("untere Temperatur von Aluminium")
 plt.show()
 
-
+pku = cw*(mwku +wgruppe)*patuku[0]
+pal = cw*(mwalu + wgruppe)*patalu[0]
+print("Wärmeleistung Kupfer:", pku)
+print("Wärmeleistung Aluminium", pal)
 #Aufgabe 3
+
 
 plt.plot(t2, Tual,'.r-',label = 'T Unten')
 plt.plot(t2, Toal,'.g-',label = 'T Oben')
