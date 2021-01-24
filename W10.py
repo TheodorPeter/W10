@@ -176,9 +176,9 @@ plt.title("untere Temperatur von Aluminium")
 plt.show()
 
 pku = cw*(mwku +wgruppe)*patuku[0]
-pal = cw*(mwalu + wgruppe)*patalu[0]
+palu = cw*(mwalu + wgruppe)*patalu[0]
 print("Wärmeleistung Kupfer:", pku)
-print("Wärmeleistung Aluminium", pal)
+print("Wärmeleistung Aluminium", palu)
 #Aufgabe 3
 
 
@@ -202,5 +202,19 @@ plt.ylabel("T in °C")
 plt.legend()
 plt.show()
 
+deltalu = fct.mittelwert((Toal-Tual)[26:])
+deltku = fct.mittelwert((Toku-Tuku)[26:])
 print("Temperaturdifferenz Alu Stationär:", fct.mittelwert((Toal-Tual)[26:]))
 print("Temperaturdifferenz Kupfer Stationär:", fct.mittelwert((Toku-Tuku)[26:]))
+
+#Aufgabe 4
+delxalu = 0.3
+delxku = 0.3
+ralu = 0.0125
+rku = 0.0125
+
+lambdaku = pku * delxku /(np.pi * rku **2 * deltku)
+lambdaalu = palu * delxalu /(np.pi * ralu**2 * deltalu)
+
+print("Lambda kupfer:", lambdaku)
+print("Lambda Alu:", lambdaalu)
