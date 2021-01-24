@@ -55,7 +55,7 @@ plt.show()
 plt.plot(t3, Tmisch2, 'k.')
 plt.plot(t3, grenzgerade1(t3), 'r--', linewidth = 0.8)
 plt.plot(t3, grenzgerade2(t3), 'r--', linewidth = 0.8, label = 'Grenzgeraden')
-plt.show()
+#plt.show()
 
 def mitte(x):
     return poly[0]*x**8 + poly[1]*x**7 + poly[2]*x**6 + poly[3]*x**5 + poly[4]*x**4 + poly[5]*x**3 + poly[6]*x**2 + poly[7]*x + poly[8]
