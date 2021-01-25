@@ -108,7 +108,7 @@ plt.plot(t12, ausgleichwarm(t12), 'r', linewidth=0.8, label = 'Ausgleichsgerade 
 plt.plot(t12, ausgleichkalt(t12), 'b', label = 'Ausgleichsgerade T_kalt')
 plt.plot(t23, ausgleichmisch(t23), 'g', label = 'Ausgleichsgerade T_misch')
 #senkrechte geraden
-plt.vlines(x = tstern, ymin = ausgleichkalt(tstern), ymax = ausgleichwarm(tstern),colors= 'g', label='t*')
+plt.vlines(x = tstern, ymin = ausgleichkalt(tstern), ymax = ausgleichwarm(tstern),colors= 'k', label='t*')
 plt.plot(tstern, ausgleichwarm(tstern), 'rs', label = 'T_warm')
 plt.plot(tstern, ausgleichmisch(tstern), 'gs', label = 'T_misch')
 plt.plot(tstern, ausgleichkalt(tstern), 'bs', label ='T_kalt' )
