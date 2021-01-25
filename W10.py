@@ -112,7 +112,7 @@ plt.vlines(x = tstern, ymin = ausgleichkalt(tstern), ymax = ausgleichwarm(tstern
 plt.plot(tstern, ausgleichwarm(tstern), 'rs', label = 'T_warm')
 plt.plot(tstern, ausgleichmisch(tstern), 'gs', label = 'T_misch')
 plt.plot(tstern, ausgleichkalt(tstern), 'bs', label ='T_kalt' )
-plt.title('Zwickelabgleich Aufgabe 3')
+plt.title('Zwickelabgleich Aufgabe 1')
 plt.grid()
 plt.legend()
 plt.show()
