@@ -175,8 +175,8 @@ plt.grid()
 plt.title("untere Temperatur von Aluminium")
 plt.show()
 
-pku = cw*(mwku +wgruppe)*patuku[0]
-palu = cw*(mwalu + wgruppe)*patalu[0]
+pku = cw*(mwku +wgruppe)*patuku[0]/60
+palu = cw*(mwalu + wgruppe)*patalu[0]/60
 print("Wärmeleistung Kupfer:", pku)
 print("Wärmeleistung Aluminium", palu)
 #Aufgabe 3
