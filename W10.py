@@ -177,6 +177,10 @@ plt.show()
 
 pku = cw*(mwku +wgruppe)*patuku[0]/60
 palu = cw*(mwalu + wgruppe)*patalu[0]/60
+print("Steigung kupfer:", patuku[0], "in SI Einheiten:", patuku[0]/60)
+print("Steigung der Grenzgeraden von Kupfer:", grenzku, "in SI Einheiten:", grenzku/60)
+print("Steigung Alu:", patalu[0], "in SI Einheiten:", patalu[0]/60)
+print("Steigung der Grenzgeraden von Alu:", grenzalu, "in SI Einheiten:", grenzalu/60)
 print("Wärmeleistung Kupfer:", pku)
 print("Wärmeleistung Aluminium", palu)
 #Aufgabe 3
@@ -205,7 +209,9 @@ plt.show()
 deltalu = fct.mittelwert((Toal-Tual)[26:])
 deltku = fct.mittelwert((Toku-Tuku)[26:])
 print("Temperaturdifferenz Alu Stationär:", fct.mittelwert((Toal-Tual)[26:]))
+print("Fehler Tempreraturdifferenz Alu stationär:", fct.mittelwertfehler((Toal-Tual)[26:]))
 print("Temperaturdifferenz Kupfer Stationär:", fct.mittelwert((Toku-Tuku)[26:]))
+print("Fehler Temperaturdifferenz Kupfer stationär:", fct.mittelwertfehler((Toku-Tuku)[26:]))
 
 #Aufgabe 4
 delxalu = 0.3
